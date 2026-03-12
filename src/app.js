@@ -6,7 +6,9 @@ const herramientasRoutes = require("./routes/munecos.routes");
 const errorHandler = require("./middleware/error.middleware");
 const authRoutes = require("./routes/auth.routes");
 const usuariosRoutes = require("./routes/usuarios.routes");
-
+app.get("/ping", (req, res) => {
+  res.status(200).json({ status: "ok" });
+});
 
 const app = express();
 
@@ -19,5 +21,8 @@ app.use("/auth", authRoutes);
 app.use("/herramientas", herramientasRoutes);
 app.use("/usuarios", usuariosRoutes);
 app.use(errorHandler);
+app.get("/ping", (req, res) => {
+  res.status(200).json({ status: "ok" });
+});
 
 module.exports = app;
