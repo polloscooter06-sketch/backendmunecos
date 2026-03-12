@@ -6,15 +6,14 @@ const herramientasRoutes = require("./routes/munecos.routes");
 const errorHandler = require("./middleware/error.middleware");
 const authRoutes = require("./routes/auth.routes");
 const usuariosRoutes = require("./routes/usuarios.routes");
-app.get("/ping", (req, res) => {
-  res.status(200).json({ status: "ok" });
-});
+
 
 const app = express();
 
 app.get("/", (req, res) => {
   res.json({ message: "API funcionando 🚀" });
 });
+
 app.use(cors());
 app.use(express.json());
 app.use("/auth", authRoutes);
